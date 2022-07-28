@@ -133,19 +133,9 @@ public class ArticleController {
     public void getArticles(Rq rq) {
         List<ArticleDto> articleDtos = articleService.findAll();
 
-        Map<String, Object> resultData = new LinkedHashMap<>();
-
-        resultData.put("resultCod", "S-1");
-        resultData.put("msg", "성공");
-        resultData.put("data", articleDtos);
+        Map<String, Object> resultData
+                = Ut.mapOf("resultCode", "S-1", "msg", "성공", "data", articleDtos);
 
         rq.json(resultData);
-
-//        List<ArticleDto> articleDtos = articleService.findAll();
-//
-//        Map<String, Object> resultData
-//                = Ut.mapOf("resultCode", "S-1", "msg", "성공", "data", articleDtos);
-//
-//        rq.json(resultData);
     }
 }
