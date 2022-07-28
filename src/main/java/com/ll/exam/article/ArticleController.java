@@ -2,6 +2,7 @@ package com.ll.exam.article;
 
 import com.ll.exam.Rq;
 import com.ll.exam.article.dto.ArticleDto;
+import com.ll.exam.util.Ut;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -139,5 +140,12 @@ public class ArticleController {
         resultData.put("data", articleDtos);
 
         rq.json(resultData);
+
+//        List<ArticleDto> articleDtos = articleService.findAll();
+//
+//        Map<String, Object> resultData
+//                = Ut.mapOf("resultCode", "S-1", "msg", "성공", "data", articleDtos);
+//
+//        rq.json(resultData);
     }
 }
