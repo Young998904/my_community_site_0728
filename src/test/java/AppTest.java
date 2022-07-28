@@ -18,7 +18,7 @@ public class AppTest {
     }
 
     @Test
-        // ArticleDto => JS객체(단순)
+        // ArticleDto => JS객체(단순)({})
     void ObjectMapper__articleDtoToJsonStr() {
         ArticleDto articleDto = new ArticleDto(1, "제목", "내용");
 
@@ -30,7 +30,7 @@ public class AppTest {
     }
 
     @Test
-        // List<ArticleDto> => JS배열
+        // List<ArticleDto> => JS배열([{}, {}])
     void ObjectMapper__articleDtoListToJsonStr() {
         List<ArticleDto> articleDtos = new ArrayList<>();
         articleDtos.add(new ArticleDto(1, "제목1", "내용1"));
