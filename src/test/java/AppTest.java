@@ -74,7 +74,7 @@ public class AppTest {
 
         String jsonStr = Ut.json.toStr(articleDtos, "");
 
-        List<ArticleDto> articleDtosFromJson = Ut.json.toObjList(jsonStr, new TypeReference<>() {}, null);
+        List<ArticleDto> articleDtosFromJson = Ut.json.toObj(jsonStr, new TypeReference<>() {}, null);
 
         assertThat(articleDtosFromJson).isEqualTo(articleDtos);
     }
@@ -86,7 +86,7 @@ public class AppTest {
         articleDtoMap.put("최신", new ArticleDto(2, "제목2", "내용2"));
         String jsonStr = Ut.json.toStr(articleDtoMap, "");
 
-        Map<String, ArticleDto> articleDtoMapFromJson = Ut.json.toObjMap(jsonStr, new TypeReference<>(){}, null);
+        Map<String, ArticleDto> articleDtoMapFromJson = Ut.json.toObj(jsonStr, new TypeReference<>(){}, null);
 
         assertThat(articleDtoMapFromJson).isEqualTo(articleDtoMap);
     }
