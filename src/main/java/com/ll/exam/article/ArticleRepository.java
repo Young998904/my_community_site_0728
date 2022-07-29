@@ -1,11 +1,9 @@
 package com.ll.exam.article;
 
-import com.ll.exam.Rq;
 import com.ll.exam.article.dto.ArticleDto;
-import com.ll.exam.util.Ut;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ArticleRepository {
@@ -65,5 +63,12 @@ public class ArticleRepository {
 
         articleDto.setTitle(title);
         articleDto.setBody(body);
+    }
+
+    public List<ArticleDto> findAllIdGreaterThan(long fromId) {
+        return datum
+                .stream()
+                .filter(articleDto -> articleDto.getId() >= fromId)
+                .collect(Collectors.toList());
     }
 }
