@@ -28,9 +28,12 @@
                 fetch('/usr/article/getArticles/free')
                     .then(data => data.json()) // JSON을 파싱
                     .then(responseData => {
-                        console.log(responseData);
-                        // jquery 찾기 : $
-                        $('.place-1').append(responseData.msg + "<br />");
+                        const articleList = responseData.data;
+                        const lastestArticle = articleList[articleList.length -1];
+                        const content  = new Date() + " : " + lastestArticle.title + "<br />";
+                        // $('.place-1').append(content); // (최신 내용이) 아래로 추가
+                        $('.place-1').prepend(content); // (최신 내용이) 위로 추가
+                        // $('.place-1').empty().prepend(content); // (최신 내용이) 위로 추가
                     });
             }
         </script>
